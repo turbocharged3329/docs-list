@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .d-text-h1 {
   font-size: 2rem;
   font-weight: 700;
@@ -6,6 +8,7 @@
 .d-text-s1 {
   font-size: 1rem;
   font-weight: 600;
+  margin-bottom: 0.875rem;
 }
 
 .d-text-s2 {
@@ -21,6 +24,14 @@
 .d-text-p2 {
   font-size: 0.875rem;
   font-weight: 400;
+}
+
+.d-text-secondary {
+  color: $color-text-secondary;
+}
+
+.d-text-danger {
+  color: $color-danger;
 }
 
 
