@@ -52,6 +52,7 @@ $item-height: 70px;
   border-radius: 0.625rem;
   margin-bottom: 1.125rem;
   overflow: hidden;
+  background-color: $color-bg-secondary;
 
   &:hover {
     cursor: pointer;
@@ -88,6 +89,7 @@ $item-height: 70px;
   flex-direction: column;
   min-width: 0;
   flex: 1;
+  border-left: 1px solid $color-border;
 
   &__title {
     overflow: hidden;
