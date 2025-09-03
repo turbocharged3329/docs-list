@@ -1,6 +1,6 @@
 import { computed, type Ref } from 'vue'
 
-const IMG_PLACEHOLDER_PATH = '/images/picture-placeholder.png'
+const IMG_PLACEHOLDER_PATH = `${import.meta.env.BASE_URL}images/picture-placeholder.png`
 
 export const useImage = (imgSrc: Ref<string | null>) => {
   const imgPath = computed(() => {
