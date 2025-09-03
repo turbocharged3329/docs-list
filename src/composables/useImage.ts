@@ -9,7 +9,7 @@ export const useImage = (imgSrc: Ref<string | null>) => {
 
   function onImageLoadError(e: Event) {
     if (e.target instanceof HTMLImageElement) {
-      if (e.target.src === IMG_PLACEHOLDER_PATH) {
+      if (e.target.src.indexOf(IMG_PLACEHOLDER_PATH) !== -1) {
         console.warn('Ошибка при загрузке плейсхолдера')
         return
       }
