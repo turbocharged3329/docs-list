@@ -21,5 +21,13 @@ import DocsDocContent from '@/components/docs/DocsDocContent.vue'
   );
   border-radius: 0.625rem;
   overflow: hidden;
+
+  @media screen and (max-width: 767px) {
+    height: calc(
+      100vh - $header-height - $header-margin-bottom - $body-padding-top--mobile -
+        $body-padding-bottom--mobile
+    );
+    position: relative;
+  }
 }
 </style>

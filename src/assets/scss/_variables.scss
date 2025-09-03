@@ -13,6 +13,12 @@ $color-gray-300: #DEE2E6;
 
 $body-padding-top: 41px;
 $body-padding-bottom: 58px;
-$header-height: 60px;
-$header-margin-bottom: 10px;
+$body-padding-x: 50px;
+
+$body-padding-top--mobile: calc($body-padding-top / 2);
+$body-padding-bottom--mobile: calc($body-padding-bottom / 2);
+$body-padding-x--mobile: calc($body-padding-x / 2);
+
+$header-height: 39px;
+$header-margin-bottom: 35px;
 

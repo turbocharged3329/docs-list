@@ -11,8 +11,12 @@ html {
 body {
   width: 100%;
   height: 100vh;
-  padding: 41px 50px 58px;
+  padding: $body-padding-top $body-padding-x $body-padding-bottom;
   background: $color-bg-primary;
+
+  @media screen and (max-width: 767px) {
+    padding: $body-padding-top--mobile $body-padding-x--mobile $body-padding-bottom--mobile;
+  }
 }
 
 button {

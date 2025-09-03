@@ -12,7 +12,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 35px;
+  margin-bottom: $header-margin-bottom;
   flex-shrink: 0;
+  height: $header-height;
 }
 </style>

@@ -5,6 +5,10 @@
       <DTextInput v-model.trim="docSearchQuery" placeholder="Введите ID документа" />
     </section>
 
+    <p class="d-docs-sidebar__mobile-hint d-text-p2 d-text-secondary">
+      Выберите документ, чтобы посмотреть его содержимое
+    </p>
+
     <section class="d-docs-sidebar__docs-section">
       <h6 class="d-text-s1">Результаты</h6>
       <DocsList />
@@ -49,9 +53,22 @@ watch(docSearchQuery, (value) => {
   border-right: 1px solid $color-border;
   background-color: transparent;
 
+  @media screen and (max-width: 767px) {
+    flex-basis: 100%;
+  }
+
   &__search-section {
     margin-bottom: 29px;
     flex-shrink: 0;
+  }
+
+  &__mobile-hint {
+    display: none;
+    margin-bottom: 29px;
+
+    @media screen and (max-width: 767px) {
+      display: block;
+    }
   }
 
   &__docs-section {
