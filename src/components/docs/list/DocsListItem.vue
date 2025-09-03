@@ -14,31 +14,18 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { toRefs } from 'vue'
 import type { UserDocsItem } from '@/interfaces/docs.interfaces.ts'
-
-const IMG_PLACEHOLDER_PATH = '/images/picture-placeholder.png'
+import { useImage } from '@/composables/useImage.ts'
 
 interface Props {
   data: UserDocsItem
 }
 
 const props = defineProps<Props>()
+const { image } = toRefs(props.data)
 
-const imgPath = computed(() => {
-  return props.data.image || IMG_PLACEHOLDER_PATH
-})
-
-function onImageLoadError(e: Event) {
-  if (e.target instanceof HTMLImageElement) {
-    if (e.target.src === IMG_PLACEHOLDER_PATH) {
-      console.warn('Ошибка при загрузке плейсхолдера')
-      return
-    }
-
-    e.target.src = IMG_PLACEHOLDER_PATH
-  }
-}
+const { imgPath, onImageLoadError } = useImage(image)
 </script>
 
 <style lang="scss" scoped>
@@ -54,7 +41,8 @@ $item-height: 70px;
   overflow: hidden;
   background-color: $color-bg-secondary;
 
-  &:hover {
+  &:hover,
+  &--active {
     cursor: pointer;
 
     .d-docs-list-item-info {

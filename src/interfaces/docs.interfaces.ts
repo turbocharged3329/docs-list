@@ -2,7 +2,7 @@ export interface UserDocsItem {
   id: number
   name: string
   description?: string
-  image?: string
+  image: string | null
   size?: number
 }
 

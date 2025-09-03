@@ -5,6 +5,7 @@ import { DocsService } from '@/services/docs.ts'
 
 export const useDocsStore = defineStore('docs', () => {
   const items = ref<Array<UserDocsItem>>([])
+  const selectedItem = ref<UserDocsItem | null>(null)
   const isLoading = ref(false)
   const isError = ref(false)
 
@@ -19,8 +20,8 @@ export const useDocsStore = defineStore('docs', () => {
 
       if (status === 200 && data) {
         items.value = data
-      } else {
-        isError.value = true
+
+        return
       }
     } catch (error) {
       console.error(error)
@@ -32,12 +33,14 @@ export const useDocsStore = defineStore('docs', () => {
 
   function resetState() {
     items.value = []
+    selectedItem.value = null
     isLoading.value = false
     isError.value = false
   }
 
   return {
     items,
+    selectedItem,
     isListEmpty,
     isLoading,
     isError,
