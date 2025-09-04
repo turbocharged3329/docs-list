@@ -61,7 +61,7 @@ $item-height: 70px;
 
 .d-docs-list-item-image {
   width: auto;
-  min-height: 100%;
+  height: 100%;
   aspect-ratio: 1/1;
 
   &__img {
